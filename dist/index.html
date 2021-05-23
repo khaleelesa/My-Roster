@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Roster</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+
+<body>
+    <div class="info" id="getRoster">
+        <input type="text" id="item-input" placeholder="" class="css-input">
+        <a href="#" class="myButton" id="btn">Get Roster</a>
+    </div>
+
+    <div class="playersInfo"> </div>
+
+    <script id="players-template" type="text/x-handlebars-template">
+        {{#each players}}
+        <div class="player">
+            {{this.firstName}} {{this.lastName}}
+            <br>{{this.jersey}}
+            <img class="playerImage" src="https://nba-players.herokuapp.com/players/{{this.lastName}}/{{this.firstName}}" onerror="this.onerror=null;this.src='https://image.freepik.com/free-vector/boy-playing-basketball-cartoon-people-sport-icon-concept-isolated-flat-cartoon-style_138676-2193.jpg'"
+            />
+            <br> {{this.pos}}
+
+
+        </div>
+        {{/each}}
+    </script>
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="render.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
